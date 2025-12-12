@@ -13,6 +13,12 @@ const meta = preview.meta({
   title: 'Button',
   component: Button,
   args: { onClick: fn() },
+  parameters: {
+    interactions: { disable: true },
+    previewTabs: {
+      'storybook/interactions/panel': { hidden: true },
+    },
+  },
 });
 
 const Stack = styled.div({ display: 'flex', flexDirection: 'column', gap: '1rem' });
@@ -406,3 +412,13 @@ export const ShortcutAndDefaultTooltip = meta.story({
     shortcut: ['Control', 'Shift', 'H'],
   },
 });
+
+export default {
+  // ...existing config
+  parameters: {
+    previewTabs: {
+      'storybook/interactions/panel': { hidden: true },
+    },
+    // ...other parameters
+  },
+};
